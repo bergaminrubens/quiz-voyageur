@@ -28,6 +28,10 @@ const resultIconEl = document.getElementById("resultIcon");
 const barsEl = document.getElementById("bars");
 const resultExtraEl = document.getElementById("resultExtra");
 
+const simulationTitleEl = document.getElementById("simulationTitle");
+const simulationIntroEl = document.getElementById("simulationIntro");
+const simulationTableEl = document.getElementById("simulationTable");
+
 fetch("./questions.json")
   .then(response => response.json())
   .then(data => {
@@ -105,6 +109,7 @@ function showResult() {
   resultIconEl.className = `travel-icon result-icon ${winner}`;
 
   renderBars(winner);
+  renderSimulationTable(winner);
   showScreen("result");
 }
 
@@ -112,10 +117,10 @@ function renderBars(winner) {
   const total = questions.length;
 
   const labels = {
-  backpacker: "Voyageur Backpacker / Aventurier",
-  stratege: "Voyageur Mixte / Stratège",
-  confort: "Voyageur Confort"
-};
+    backpacker: "Voyageur Backpacker / Aventurier",
+    stratege: "Voyageur Mixte / Stratège",
+    confort: "Voyageur Confort"
+  };
 
   const order = ["backpacker", "stratege", "confort"];
 
@@ -143,6 +148,67 @@ function renderBars(winner) {
 
     barsEl.appendChild(row);
   });
+}
+
+function renderSimulationTable(type) {
+  const profiles = {
+    backpacker: {
+      label: "Voyageur Backpacker / Aventurier",
+      min: 20,
+      max: 40
+    },
+    stratege: {
+      label: "Voyageur Mixte / Stratège",
+      min: 50,
+      max: 80
+    },
+    confort: {
+      label: "Voyageur Confort",
+      min: 90,
+      max: 150
+    }
+  };
+
+  const durations = [
+    { label: "2 semaines", days: 14 },
+    { label: "1 mois", days: 30 },
+    { label: "2 mois", days: 60 },
+    { label: "3 mois", days: 90 },
+    { label: "6 mois", days: 180 },
+    { label: "12 mois", days: 365 }
+  ];
+
+  const profile = profiles[type];
+
+  simulationTitleEl.textContent = "Combien prévoir selon la durée ?";
+  simulationIntroEl.textContent =
+    `Pour ton profil ${profile.label}, voici une estimation basée sur ${profile.min}–${profile.max} € par jour.`;
+
+  simulationTableEl.innerHTML = `
+    <div class="simulation-row simulation-head">
+      <span>Durée</span>
+      <span>Total estimé</span>
+    </div>
+  `;
+
+  durations.forEach(duration => {
+    const minTotal = duration.days * profile.min;
+    const maxTotal = duration.days * profile.max;
+
+    const row = document.createElement("div");
+    row.className = "simulation-row";
+
+    row.innerHTML = `
+      <span>${duration.label}</span>
+      <strong>${formatEuro(minTotal)} – ${formatEuro(maxTotal)}</strong>
+    `;
+
+    simulationTableEl.appendChild(row);
+  });
+}
+
+function formatEuro(value) {
+  return value.toLocaleString("fr-FR") + " €";
 }
 
 function getWinner() {
