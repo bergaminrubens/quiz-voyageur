@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quel type de voyageur es-tu ?</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section id="intro" class="screen active hero">
+      <div class="travel-icon" aria-hidden="true">✦</div>
+
+      <p class="label">Basé sur mon voyage de 3 mois en Asie du Sud-Est</p>
+      <h1>Quel type de voyageur es-tu ?</h1>
+      <p class="subtitle">
+        Bus de nuit, temples, îles, street food, rooftops, galères et arbitrages :
+        découvre ton vrai profil de voyage.
+      </p>
+
+      <div class="mini-map">
+        <span>Vietnam</span>
+        <span>Laos</span>
+        <span>Cambodge</span>
+        <span>Thaïlande</span>
+      </div>
+
+      <button id="startBtn">Commencer le quiz</button>
+    </section>
+
+    <section id="quiz" class="screen">
+      <div class="top">
+        <p id="counter"></p>
+      </div>
+
+      <div class="progress">
+        <div id="progressFill"></div>
+      </div>
+
+      <article class="question-card">
+        <div class="travel-icon" aria-hidden="true">✦</div>
+
+        <p class="stamp">Question</p>
+        <h2 id="question"></h2>
+        <div id="answers" class="answers"></div>
+      </article>
+    </section>
+
+    <section id="result" class="screen result-screen">
+<div id="resultIcon" class="travel-icon result-icon" aria-hidden="true">✦</div>
+      <p class="label">Résultat</p>
+      <h1 id="resultTitle"></h1>
+      <p id="resultText" class="subtitle"></p>
+
+      <div class="winner-card">
+        <p id="winnerSentence"></p>
+      </div>
+
+      <div class="budget-card">
+  <h2>Combien prévoir selon ton style ?</h2>
+  <p>
+    Ces montants sont basés sur mon voyage de 3 mois en Asie du Sud-Est.
+    Ils résument trois façons de voyager : budget serré, voyage mixte ou confort.
+  </p>
+
+  <div class="budget-table">
+    <div class="budget-row budget-head">
+      <span>Style</span>
+      <span>Budget moyen</span>
+    </div>
+
+    <div class="budget-row">
+      <span>🎒 Voyageur Backpacker / Aventurier</span>
+      <strong>20–40€/j</strong>
+    </div>
+
+    <div class="budget-row">
+      <span>👜 Voyageur Mixte / Stratège</span>
+      <strong>50–80€/j</strong>
+    </div>
+
+    <div class="budget-row">
+      <span>🧳 Voyageur Confort</span>
+      <strong>90–150€/j</strong>
+    </div>
+  </div>
+
+  
+</div>
+
+      <div class="chart-card">
+        <h2>Ton profil en données</h2>
+        <div id="bars"></div>
+      </div>
+
+      <div id="resultExtra" class="extra"></div>
+
+      <button id="restartBtn">Rejouer</button>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

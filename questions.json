@@ -1,0 +1,362 @@
+[
+  {
+    "question": "Quelle expérience te donne le plus envie ?",
+    "answers": [
+      {
+        "text": "Zipline dans la jungle au-dessus des rochers",
+        "note": "Sensations fortes et nature brute",
+        "type": "backpacker"
+      },
+      {
+        "text": "Temple au lever du soleil avec timing parfait",
+        "note": "Expérience forte, mais bien préparée",
+        "type": "stratege"
+      },
+      {
+        "text": "Croisière sunset tranquille avec cocktail",
+        "note": "Beau moment sans effort",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu arrives dans une nouvelle ville à 21h, sans réseau. Tu fais quoi ?",
+    "answers": [
+      {
+        "text": "Je marche jusqu’à trouver un local ou un voyageur qui peut m’aider",
+        "note": "Débrouille directe sur le terrain",
+        "type": "backpacker"
+      },
+      {
+        "text": "J’avais déjà noté l’adresse et le quartier de mon hôtel, je prends un tuk-tuk",
+        "note": "Anticipation sans stress",
+        "type": "stratege"
+      },
+      {
+        "text": "Le transport jusqu'à mon hôtel était déjà organisé, je m'y rends",
+        "note": "Sécurité et confort d’abord",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Quel type de journée te ressemble le plus ?",
+    "answers": [
+      {
+        "text": "Scooter, cascade, route défoncée, rencontre improbable",
+        "note": "Journée brute et spontanée",
+        "type": "backpacker"
+      },
+      {
+        "text": "Grosse visite le matin, pause l’après-midi, sunset le soir",
+        "note": "Journée équilibrée et bien construite",
+        "type": "stratege"
+      },
+      {
+        "text": "Hôtel avec piscine, visite cool, bon resto, massage",
+        "note": "Journée fluide et agréable",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Une activité coûte 45 €. Tu réagis comment ?",
+    "answers": [
+      {
+        "text": "Je cherche une alternative gratuite ou beaucoup moins chère",
+        "note": "Budget avant tout",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je la fais si elle mérite vraiment sa place dans le voyage",
+        "note": "Arbitrage valeur et souvenir",
+        "type": "stratege"
+      },
+      {
+        "text": "Je la fais sans réfléchir",
+        "note": "Plaisir assumé",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu dois faire 250 km de transport. Tu choisis quoi ?",
+    "answers": [
+      {
+        "text": "Bus local de nuit pas cher, même si c’est long et inconfortable",
+        "note": "Cheap et authentique",
+        "type": "backpacker"
+      },
+      {
+        "text": "Train de nuit plutôt confortable, pour gagner du temps et de l'énergie",
+        "note": "Choix rationnel",
+        "type": "stratege"
+      },
+      {
+        "text": "L'avion en matinée, pour aller rapidement et être frais à l'arrivée",
+        "note": "Moins de fatigue, plus de sérénité",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Ton logement idéal en Asie du Sud-Est ?",
+    "answers": [
+      {
+        "text": "Auberge ou dortoir, pas cher, socialisation facile",
+        "note": "Rencontres et budget bas",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je varie : auberge parfois, hôtel quand j'en ai marre",
+        "note": "Confort variable selon le contexte",
+        "type": "stratege"
+      },
+      {
+        "text": "Hôtel avec vraie salle de bain, déj inclus et piscine",
+        "note": "Repos sérieux",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Quelle phrase te correspond le mieux face aux imprévus ?",
+    "answers": [
+      {
+        "text": "J'ai rien prévu, alors c'est facile de m'adapter à tout",
+        "note": "Liberté totale",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je garde toujours une marge pour pouvoir ajuster",
+        "note": "Imprévu intégré au plan",
+        "type": "stratege"
+      },
+      {
+        "text": "Je préfère les limiter pour profiter sans stress",
+        "note": "Moins de friction",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu es à Bangkok. Tu fais quoi ?",
+    "answers": [
+      {
+        "text": "Je marche dans les ruelles, je teste la street food et je me laisse surprendre",
+        "note": "Exploration à l’instinct",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je combine spots clés et détours malins pour voir un max sans perdre de temps",
+        "note": "Ville rentabilisée",
+        "type": "stratege"
+      },
+      {
+        "text": "Je fais rooftop, centre commercial climatisé et dîner dans un bon resto avec vue",
+        "note": "Grande ville en mode confort",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu choisis comment ton repas ?",
+    "answers": [
+      {
+        "text": "Street food au hasard, tant que ça sent bon, même si c'est pas propre",
+        "note": "Instinct local",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je cherche le meilleur ratio local, bonne nourriture, hygiène et prix",
+        "note": "La bonne dépense",
+        "type": "stratege"
+      },
+      {
+        "text": "Restaurant très propre, fréquenté par les touristes, bien noté",
+        "note": "Confort alimentaire",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Quel souvenir te marque le plus ?",
+    "answers": [
+      {
+        "text": "Une discussion imprévue avec quelqu’un rencontré sur la route qui finit en vraie connexion",
+        "note": "Humain et spontané",
+        "type": "backpacker"
+      },
+      {
+        "text": "Une expérience que tu n'avais pas prévu et qui te surprend profondément",
+        "note": "Itinéraire réussi",
+        "type": "stratege"
+      },
+      {
+        "text": "Les massages en série, la vue depuis un rooftop ou le bord d'une plage",
+        "note": "Confort émotionnel",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "À Angkor, tu fais quoi ?",
+    "answers": [
+      {
+        "text": "Je visite à mon rythme, en solo ou avec des amis, quitte à rater des temples",
+        "note": "Liberté avant tout",
+        "type": "backpacker"
+      },
+      {
+        "text": "Sunrise, petit circuit, grand circuit, temples lointains, je ne loupe rien",
+        "note": "Expérience maximale",
+        "type": "stratege"
+      },
+      {
+        "text": "Je prends guide et transport privé pour ne pas me fatiguer",
+        "note": "Confort et explication",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Sur une île thaïlandaise, ta priorité ?",
+    "answers": [
+      {
+        "text": "Faire la fête et les rencontres, participer à une full-moon party",
+        "note": "Exploration",
+        "type": "backpacker"
+      },
+      {
+        "text": "Découvrir chacune des plages de l'île, marcher des heures, faire du snorkeling à l'occasion",
+        "note": "Île optimisée",
+        "type": "stratege"
+      },
+      {
+        "text": "Profiter de la plage de l'hôtel et du bar donnant sur la mer avec un cocktail",
+        "note": "Repos premium",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu fais une journée à Vang Vieng. Tu choisis quoi ?",
+  "answers": [
+      {
+        "text": "Matinée au lagoon et viewpoint en milieu d'après-midi, fête en soirée sans regarder l’heure",
+        "note": "Pas de prise de tête",
+        "type": "backpacker"
+      },
+      {
+        "text": "Journée au lagoon et fin d'après-midi paramoteur au-dessus des montagnes",
+        "note": "Se laisse surprendre sans perdre le contrôle",
+        "type": "stratege"
+     },
+     {
+        "text": "Lagoon le plus proche de la ville, coucher de soleil dans un beau spot",
+        "note": "Plaisir détendu",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu vois un temple, un marché et un musée dans la même zone. Tu fais quoi ?",
+    "answers": [
+      {
+        "text": "Je choisis le marché, on peut y manger pas cher et rencontrer du monde",
+        "note": "Logique d'aventure",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je visite le musée pour en apprendre plus sur la culture locale",
+        "note": "Logique de culture",
+        "type": "stratege"
+      },
+      {
+        "text": "Je fais un temple, ce sera l'occasion de profiter d'une pause sereine",
+        "note": "Logique d'effort limité",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Quel rapport as-tu au budget ?",
+    "answers": [
+      {
+        "text": "Je veux tenir le plus longtemps possible avec le moins possible",
+        "note": "Survie budgétaire",
+        "type": "backpacker"
+      },
+      {
+        "text": "J’économise sur certains postes pour investir fort ailleurs",
+        "note": "Arbitrage extrême",
+        "type": "stratege"
+      },
+      {
+        "text": "Je veux être bien, même si ça coûte plus",
+        "note": "Confort assumé",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Ton genre de dépense plaisir ?",
+    "answers": [
+      {
+        "text": "Une bière locale, un scooter, une auberge sociale",
+        "note": "Simple et vivant",
+        "type": "backpacker"
+      },
+      {
+        "text": "Une grosse activité rare et mémorable",
+        "note": "Dépense ciblée",
+        "type": "stratege"
+      },
+      {
+        "text": "Un massage, un bel hôtel ou un bon dîner",
+        "note": "Récupération et plaisir",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "Tu tombes malade en voyage. Tu fais quoi ?",
+    "answers": [
+      {
+        "text": "Je fais avec et je continue tant que c’est supportable",
+        "note": "Je m'adapte",
+        "type": "backpacker"
+      },
+      {
+        "text": "Je coupe certaines choses pour garder ce qui vaut vraiment le coup",
+        "note": "Je tranche",
+        "type": "stratege"
+      },
+      {
+        "text": "Je mets le voyage en pause jusqu’à être vraiment remis",
+        "note": "Je sécurise",
+        "type": "confort"
+      }
+    ]
+  },
+  {
+    "question": "À la fin du voyage, tu veux pouvoir dire quoi ?",
+    "answers": [
+      {
+        "text": "J’ai vécu des moments improbables que j’aurais jamais pu prévoir",
+        "note": "Aventure humaine",
+        "type": "backpacker"
+      },
+      {
+        "text": "J’ai vu et fait tout ce qui valait vraiment le coup sans perdre de temps",
+        "note": "Voyage maîtrisé",
+        "type": "stratege"
+      },
+      {
+        "text": "J’ai profité à fond sans galérer ni me cramer",
+        "note": "Équilibre confort",
+        "type": "confort"
+      }
+    ]
+  }
+]
