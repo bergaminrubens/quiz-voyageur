@@ -63,8 +63,8 @@ body::before {
   box-shadow: 12px 12px 0 var(--black);
 }
 
-/* IMPORTANT : plus de hauteur forcée */
 .question-card {
+  min-height: 690px;
   display: flex;
   flex-direction: column;
 }
@@ -216,6 +216,7 @@ button {
   text-align: left;
   cursor: pointer;
   box-shadow: 6px 6px 0 var(--black);
+
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.38rem;
   font-weight: 900;
@@ -319,9 +320,11 @@ button {
   right: 34px;
   top: 28px;
   z-index: 2;
+
   color: var(--red);
   font-size: 3rem;
   line-height: 1;
+
   text-shadow: 3px 3px 0 var(--black);
   animation: symbolFloat 4.5s ease-in-out infinite;
 }
@@ -331,7 +334,9 @@ button {
   right: 34px;
   top: 28px;
   margin: 0;
+
   font-size: 3.6rem;
+
   animation:
     resultPop 0.65s cubic-bezier(.2,1.35,.4,1) both,
     symbolFloat 4.5s ease-in-out infinite 0.65s;
@@ -474,11 +479,15 @@ button {
     box-shadow: 7px 7px 0 var(--black);
   }
 
-  h1 {
-    max-width: 100%;
-    font-size: clamp(2.2rem, 9vw, 3.6rem);
-    line-height: 0.98;
+  .question-card {
+    min-height: 620px;
   }
+
+  h1 {
+  max-width: 100%;
+  font-size: clamp(2.2rem, 9vw, 3.6rem);
+  line-height: 0.98;
+}
 
   h2 {
     min-height: 104px;
@@ -495,16 +504,15 @@ button {
   }
 
   .travel-icon {
-    right: 22px;
-    top: 22px;
-    font-size: 2.4rem;
-  }
-
+  right: 22px;
+  top: 22px;
+  font-size: 2.4rem;
+}
   .result-icon {
-    right: 22px;
-    top: 22px;
-    font-size: 2.6rem;
-  }
+  right: 22px;
+  top: 22px;
+  font-size: 2.6rem;
+}
 
   .answer {
     min-height: 108px;
@@ -519,49 +527,33 @@ button {
   }
 
   .bar-head {
-    flex-direction: row;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 12px;
+    flex-direction: column;
+    gap: 2px;
   }
 
-  .bar-head span:first-child {
-    font-size: 1.05rem;
-    line-height: 1.15;
-    max-width: 58%;
-  }
-
-  .bar-head span:last-child {
-    font-size: 1rem;
-    white-space: nowrap;
-    text-align: right;
-  }
-
-  .budget-table {
+   .budget-table {
     border-radius: 18px;
   }
 
   .budget-row {
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
   .budget-head span {
-    font-size: 0.95rem;
+    font-size: 1rem;
     padding: 14px 12px;
-    white-space: nowrap;
   }
 
-  .budget-row span {
+  .budget-row span,
+  .budget-row strong {
     padding: 16px 12px;
-    font-size: 1rem;
-    line-height: 1.25;
+    font-size: 0.95rem;
   }
 
   .budget-row strong {
-    padding: 16px 12px;
-    font-size: 1.1rem;
     text-align: right;
-    white-space: nowrap;
+    font-size: 1.05rem;
+    padding-top: 16px;
   }
 }
