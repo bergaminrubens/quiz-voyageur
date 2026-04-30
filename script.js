@@ -58,6 +58,10 @@ function startQuiz() {
   showQuestion();
 }
 
+function shuffleAnswers(array) {
+  return [...array].sort(() => Math.random() - 0.5);
+}
+
 function showQuestion() {
   const current = questions[currentIndex];
 
@@ -69,7 +73,7 @@ function showQuestion() {
   questionEl.innerHTML = current.question.replace(/\s([?!:;])/g, "&nbsp;$1");
   answersEl.innerHTML = "";
 
-  current.answers.forEach(answer => {
+  shuffleAnswers(current.answers).forEach(answer => {
     const button = document.createElement("button");
     button.className = "answer";
     button.innerHTML = `
@@ -283,31 +287,6 @@ function showScreen(name) {
   screens[name].classList.add("active");
 }
 
-/* ANIMATION SUBTITLE INTRO */
-
-const subtitleItems = document.querySelectorAll(".subtitle span:not(.no-anim)");
-
-function randomBetween(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function animateLoop() {
-  subtitleItems.forEach(item => {
-    const delay = randomBetween(0, 3000);
-
-    setTimeout(() => {
-      item.classList.add("is-visible");
-
-      setTimeout(() => {
-        item.classList.remove("is-visible");
-      }, randomBetween(800, 1800));
-
-    }, delay);
-  });
-}
-
-/* ANIMATION MOTS INTRO — 4 VISIBLES MAX */
-
 /* ANIMATION MOTS INTRO — 4 MOTS VISIBLES EXACTEMENT */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -356,7 +335,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function loopWords() {
     swapOneWord();
 
-    const delay = 2000 + Math.random() * 1000; // 4 à 6 secondes
+    const delay = 2000 + Math.random() * 1000; // 2 à 3 secondes
     setTimeout(loopWords, delay);
   }
 
