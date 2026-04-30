@@ -359,6 +359,13 @@ button {
   box-shadow: 0 0 0 var(--black);
 }
 
+.answer:focus {
+  outline: none;
+  background: var(--cream-2);
+  transform: none;
+  box-shadow: 6px 6px 0 var(--black);
+}
+
 .answer small {
   display: block;
   margin-top: 8px;

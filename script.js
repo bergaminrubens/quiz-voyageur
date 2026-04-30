@@ -78,9 +78,10 @@ function showQuestion() {
     `;
 
     button.addEventListener("click", () => {
-      scores[answer.type]++;
-      nextQuestion();
-    });
+  button.blur();
+  scores[answer.type]++;
+  nextQuestion();
+});
 
     answersEl.appendChild(button);
   });
