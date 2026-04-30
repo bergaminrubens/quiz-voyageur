@@ -359,11 +359,21 @@ button {
   box-shadow: 0 0 0 var(--black);
 }
 
-.answer:focus {
+.answer:focus,
+.answer:focus-visible,
+.answer:focus-within {
   outline: none;
   background: var(--cream-2);
   transform: none;
   box-shadow: 6px 6px 0 var(--black);
+}
+
+@media (hover: none) {
+  .answer:hover {
+    background: var(--cream-2);
+    transform: none;
+    box-shadow: 6px 6px 0 var(--black);
+  }
 }
 
 .answer small {

@@ -78,9 +78,14 @@ function showQuestion() {
     `;
 
     button.addEventListener("click", () => {
-  button.blur();
   scores[answer.type]++;
-  nextQuestion();
+
+  button.blur();
+  document.activeElement.blur();
+
+  setTimeout(() => {
+    nextQuestion();
+  }, 80);
 });
 
     answersEl.appendChild(button);
