@@ -499,8 +499,45 @@ button {
     font-size: 1.05rem;
   }
 
-  .mini-map {
-    grid-template-columns: 1fr 1fr;
+      .label {
+    max-width: 82%;
+    padding: 8px 12px;
+    font-size: 0.9rem;
+    line-height: 1.12;
+    letter-spacing: 0.04em;
+    transform: rotate(-2deg);
+  }
+
+    .mini-map {
+    width: 100%;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin: 30px auto;
+  }
+
+  .mini-map span {
+    width: 100%;
+    min-width: 0;
+    padding: 16px 8px;
+    font-size: 1.05rem;
+    border-radius: 20px;
+  }
+
+  .mini-map span:nth-child(2),
+  .mini-map span:nth-child(4) {
+    transform: rotate(2deg);
+  }
+
+    .mini-map span:nth-child(1),
+  .mini-map span:nth-child(3) {
+    transform: rotate(0deg);
+  }
+
+  #startBtn {
+    display: block;
+    width: 100%;
+    margin-top: 34px;
+    text-align: center;
   }
 
   .travel-icon {

@@ -200,11 +200,14 @@ function renderSimulationTable(type) {
 
     row.innerHTML = `
       <span>${duration.label}</span>
-      <strong>${formatEuro(minTotal)} – ${formatEuro(maxTotal)}</strong>
+      <strong>${formatNumber(minTotal)} – ${formatEuro(maxTotal)}</strong>
     `;
 
     simulationTableEl.appendChild(row);
   });
+}
+function formatNumber(value) {
+  return value.toLocaleString("fr-FR");
 }
 
 function formatEuro(value) {
