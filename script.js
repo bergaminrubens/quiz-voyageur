@@ -287,60 +287,79 @@ function showScreen(name) {
   screens[name].classList.add("active");
 }
 
-/* ANIMATION MOTS INTRO — 4 MOTS VISIBLES EXACTEMENT */
+/* ANIMATION MOTS INTRO — 4 MOTS VISIBLES, SANS MOT BLOQUÉ */
 
 document.addEventListener("DOMContentLoaded", () => {
-  const subtitleItems = Array.from(document.querySelectorAll(".subtitle span"));
-
-  if (!subtitleItems.length) return;
-
+  let subtitleItems = [];
   let visibleItems = [];
+  let hiddenQueue = [];
 
-  function randomItem(array) {
-    return array[Math.floor(Math.random() * array.length)];
+  function shuffle(array) {
+    return [...array].sort(() => Math.random() - 0.5);
   }
 
-  function showInitialWords() {
+  function getAnimatableItems() {
+    return Array.from(document.querySelectorAll(".subtitle span")).filter(item => {
+      const style = window.getComputedStyle(item);
+      return style.visibility !== "hidden" && style.display !== "none";
+    });
+  }
+
+  function resetHiddenQueue() {
+    hiddenQueue = shuffle(
+      subtitleItems.filter(item => !visibleItems.includes(item))
+    );
+  }
+
+  function initWords() {
+    subtitleItems = getAnimatableItems();
+
+    if (!subtitleItems.length) return;
+
     subtitleItems.forEach(item => {
       item.classList.remove("is-visible");
     });
 
-    const shuffled = [...subtitleItems].sort(() => Math.random() - 0.5);
-    visibleItems = shuffled.slice(0, 4);
+    visibleItems = shuffle(subtitleItems).slice(0, 4);
 
     visibleItems.forEach(item => {
       item.classList.add("is-visible");
     });
+
+    resetHiddenQueue();
   }
 
   function swapOneWord() {
-    const itemToHide = randomItem(visibleItems);
+    if (!subtitleItems.length) return;
 
-    const hiddenItems = subtitleItems.filter(item => {
-      return !visibleItems.includes(item);
-    });
+    if (!hiddenQueue.length) {
+      resetHiddenQueue();
+    }
 
-    const itemToShow = randomItem(hiddenItems);
+    const itemToHide = visibleItems.shift();
+    const itemToShow = hiddenQueue.shift();
 
     itemToHide.classList.remove("is-visible");
 
-    visibleItems = visibleItems.filter(item => item !== itemToHide);
-    visibleItems.push(itemToShow);
-
     setTimeout(() => {
       itemToShow.classList.add("is-visible");
+      visibleItems.push(itemToShow);
     }, 900);
   }
 
   function loopWords() {
-    swapOneWord();
+  swapOneWord();
 
-    const delay = 2000 + Math.random() * 1000; // 2 à 3 secondes
-    setTimeout(loopWords, delay);
-  }
+  const base = 2000; // 2 secondes fixes
+  const jitter = Math.random() * 300 - 150; // -150ms à +150ms
 
-  showInitialWords();
-  setTimeout(loopWords, 4000);
+  const delay = base + jitter;
+
+  setTimeout(loopWords, delay);
+}
+
+  initWords();
+  setTimeout(loopWords, 2000);
 });
 
 function applyFrenchSpacing() {
