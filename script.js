@@ -270,3 +270,105 @@ function showScreen(name) {
 
   screens[name].classList.add("active");
 }
+
+/* ANIMATION SUBTITLE INTRO */
+
+const subtitleItems = document.querySelectorAll(".subtitle span:not(.no-anim)");
+
+function randomBetween(min, max) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
+function animateLoop() {
+  subtitleItems.forEach(item => {
+    const delay = randomBetween(0, 3000);
+
+    setTimeout(() => {
+      item.classList.add("is-visible");
+
+      setTimeout(() => {
+        item.classList.remove("is-visible");
+      }, randomBetween(800, 1800));
+
+    }, delay);
+  });
+}
+
+/* ANIMATION MOTS INTRO — 4 VISIBLES MAX */
+
+/* ANIMATION MOTS INTRO — 4 MOTS VISIBLES EXACTEMENT */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const subtitleItems = Array.from(document.querySelectorAll(".subtitle span"));
+
+  if (!subtitleItems.length) return;
+
+  let visibleItems = [];
+
+  function randomItem(array) {
+    return array[Math.floor(Math.random() * array.length)];
+  }
+
+  function showInitialWords() {
+    subtitleItems.forEach(item => {
+      item.classList.remove("is-visible");
+    });
+
+    const shuffled = [...subtitleItems].sort(() => Math.random() - 0.5);
+    visibleItems = shuffled.slice(0, 4);
+
+    visibleItems.forEach(item => {
+      item.classList.add("is-visible");
+    });
+  }
+
+  function swapOneWord() {
+    const itemToHide = randomItem(visibleItems);
+
+    const hiddenItems = subtitleItems.filter(item => {
+      return !visibleItems.includes(item);
+    });
+
+    const itemToShow = randomItem(hiddenItems);
+
+    itemToHide.classList.remove("is-visible");
+
+    visibleItems = visibleItems.filter(item => item !== itemToHide);
+    visibleItems.push(itemToShow);
+
+    setTimeout(() => {
+      itemToShow.classList.add("is-visible");
+    }, 900);
+  }
+
+  function loopWords() {
+    swapOneWord();
+
+    const delay = 2000 + Math.random() * 1000; // 4 à 6 secondes
+    setTimeout(loopWords, delay);
+  }
+
+  showInitialWords();
+  setTimeout(loopWords, 4000);
+});
+
+function applyFrenchSpacing() {
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+
+  let node;
+
+  while (node = walker.nextNode()) {
+    node.nodeValue = node.nodeValue
+      // espace insécable avant : ; ? !
+      .replace(/\s*([:;?!])/g, '\u00A0$1')
+
+      // espace insécable avant €
+      .replace(/\s*€/g, '\u00A0€')
+
+      // espace insécable avant %
+      .replace(/\s*%/g, '\u00A0%');
+  }
+}
+
+// lance au chargement
+window.addEventListener("DOMContentLoaded", applyFrenchSpacing);
