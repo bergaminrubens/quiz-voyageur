@@ -873,3 +873,14 @@ button {
   margin-left: auto;
   margin-right: auto;
 }
+
+@media (hover: none), (pointer: coarse) {
+  .answer:hover,
+  .answer:focus,
+  .answer:active {
+    background: var(--cream-2) !important;
+    transform: none !important;
+    box-shadow: 6px 6px 0 var(--black) !important;
+    outline: none !important;
+  }
+}

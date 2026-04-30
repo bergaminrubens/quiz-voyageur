@@ -77,15 +77,21 @@ function showQuestion() {
       <small>${answer.note}</small>
     `;
 
-    button.addEventListener("click", () => {
-  scores[answer.type]++;
+    button.addEventListener("click", event => {
+  event.preventDefault();
 
+  button.classList.remove("answer-hover");
   button.blur();
-  document.activeElement.blur();
+
+  if (document.activeElement) {
+    document.activeElement.blur();
+  }
+
+  scores[answer.type]++;
 
   setTimeout(() => {
     nextQuestion();
-  }, 80);
+  }, 120);
 });
 
     answersEl.appendChild(button);
